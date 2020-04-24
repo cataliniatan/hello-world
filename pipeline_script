@@ -15,5 +15,10 @@ pipeline {
             sh label: '', script: 'cat README.md'
           }
       }
+      stage('Email'){
+         steps {
+            mail bcc: '', body: 'tes1235', cc: '', from: '', replyTo: '', subject: 'testestesteste', to: 'catalin.iatan@gmail.com'
+         }
+      }
    }
 }

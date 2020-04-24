@@ -1,0 +1,16 @@
+job ('generatedJob3') {
+	parameters {
+		stringParam('Object', 'Undescribed', 'descriere')
+	}
+	steps {
+			shell('echo $JOB_NAME $BUILD_NUMBER')
+			downstreamParameterized {
+			trigger('generatedJob') {
+				parameters{
+					predefinedProp('Object','$Object')
+				}
+			}
+		}
+	}
+
+}

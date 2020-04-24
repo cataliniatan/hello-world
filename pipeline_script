@@ -1,0 +1,19 @@
+pipeline {
+   agent any
+
+  
+   stages {
+      stage('Clone') {
+         steps {
+            // Get some code from a GitHub repository
+            git 'https://github.com/cataliniatan/hello-world.git'
+
+         }
+      }
+      stage('Print'){
+          steps {
+            sh label: '', script: 'cat README.md'
+          }
+      }
+   }
+}
